@@ -1,0 +1,664 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+
+    <!-- CASTER WHEEL COLLISION: SPHERE -->
+    <!-- ALL CASTER JOINTS ARE FIXED -->
+
+    <model name="diff_drive_robot">
+        <static>false</static>
+
+        <!-- HOVER BASE -->
+        <link name='hover_base'>
+            <pose>0 0 0.10 0 0 0</pose>
+
+            <collision name='collision'>
+                <pose>-0.2435 0 0.245 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.487 0.547 0.49</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/hover_base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>124866e-06</ixx>
+                    <ixz>2486.9e-06</ixz>
+                    <iyy>120347e-06</iyy>
+                    <iyz>0.0237e-06</iyz>
+                    <izz>216693e-06</izz>
+                </inertia>
+                <mass>3.714</mass>
+            </inertial>
+        </link>
+
+        <!-- HOVER LEFT WHEEL -->
+        <link name='hover_left_wheel'>
+            <pose>-0.3742 -0.208 0.078 0 1.5707 1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.078</radius>
+                        <length>0.045</length>
+                    </cylinder>
+                </geometry>
+                <!-- <surface>
+                    <friction>
+                        <ode>
+                            <mu>0.6</mu>
+                            <mu2>0.6</mu2>
+                        </ode>
+                    </friction>
+                </surface> -->
+            </collision>
+
+            <visual name='visual'>
+                <pose>0 0 0 0 3.1415 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/hover_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.003007</ixx>
+                    <iyy>0.003007</iyy>
+                    <izz>0.005440</izz>
+                </inertia>
+                <mass>1.7</mass>
+            </inertial>
+        </link>
+
+        <!-- HOVER RIGHT WHEEL -->
+        <link name='hover_right_wheel'>
+            <pose>-0.3742 0.208 0.078 0 1.5707 1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.078</radius>
+                        <length>0.045</length>
+                    </cylinder>
+                </geometry>
+                <!-- <surface>
+                    <friction>
+                        <ode>
+                            <mu>0.6</mu>
+                            <mu2>0.6</mu2>
+                        </ode>
+                    </friction>
+                </surface> -->
+            </collision>
+
+            <visual name='visual'>
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/hover_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.003007</ixx>
+                    <iyy>0.003007</iyy>
+                    <izz>0.005440</izz>
+                </inertia>
+                <mass>1.7</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER LEFT BASE -->
+        <link name='caster_left_base'>
+            <pose>-0.067 -0.1475 0.1 0 0 0</pose>
+
+            <collision name='collision'>
+                <pose>0 0 -0.003 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.094 0.065 0.006</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>-0.000272 -0.000090 -0.005057 0 0 0</pose>
+                <inertia>
+                    <ixx>65.864e-06</ixx>
+                    <iyy>89.566e-06</iyy>
+                    <izz>153.36e-06</izz>
+                </inertia>
+                <mass>0.1</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER RIGHT BASE -->
+        <link name='caster_right_base'>
+            <pose>-0.067 0.1475 0.1 0 0 0</pose>
+
+            <collision name='collision'>
+                <pose>0 0 -0.003 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.094 0.065 0.006</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>-0.000272 -0.000090 -0.005057 0 0 0</pose>
+                <inertia>
+                    <ixx>65.864e-06</ixx>
+                    <iyy>89.566e-06</iyy>
+                    <izz>153.36e-06</izz>
+                </inertia>
+                <mass>0.1</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER LEFT CONNECTOR -->
+        <link name='caster_left_connector'>
+            <pose>-0.067 -0.1475 0.094 0 0 0</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>0.008557 -0.000014 -0.034485 0 0 0</pose>
+                <inertia>
+                    <ixx>718.007e-06</ixx>
+                    <ixy>0.39114e-06</ixy>
+                    <ixz>140.767e-06</ixz>
+                    <iyy>585.149e-06</iyy>
+                    <iyz>0.52152e-06</iyz>
+                    <izz>525.608e-06</izz>
+                </inertia>
+                <mass>0.4</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER RIGHT CONNECTOR -->
+        <link name='caster_right_connector'>
+            <pose>-0.067 0.1475 0.094 0 0 0</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>0.008557 -0.000014 -0.034485 0 0 0</pose>
+                <inertia>
+                    <ixx>718.007e-06</ixx>
+                    <ixy>0.39114e-06</ixy>
+                    <ixz>140.767e-06</ixz>
+                    <iyy>585.149e-06</iyy>
+                    <iyz>0.52152e-06</iyz>
+                    <izz>525.608e-06</izz>
+                </inertia>
+                <mass>0.4</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER LEFT WHEEL -->
+        <link name='caster_left_wheel'>
+            <pose>-0.032 -0.1475 0.0375 0 0 0</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <sphere>
+                        <radius>0.0375</radius>
+                    </sphere>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0</mu>
+                            <mu2>0</mu2>
+                            <slip1>1</slip1>
+                            <slip2>1</slip2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.000554</ixx>
+                    <iyy>0.000554</iyy>
+                    <izz>0.000900</izz>
+                </inertia>
+                <mass>0.5</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER RIGHT WHEEL -->
+        <link name='caster_right_wheel'>
+            <pose>-0.032 0.1475 0.0375 0 0 0</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <sphere>
+                        <radius>0.0375</radius>
+                    </sphere>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0</mu>
+                            <mu2>0</mu2>
+                            <slip1>1</slip1>
+                            <slip2>1</slip2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.000554</ixx>
+                    <iyy>0.000554</iyy>
+                    <izz>0.000900</izz>
+                </inertia>
+                <mass>0.5</mass>
+            </inertial>
+        </link>
+
+        <!-- HOVER LEFT WHEEL JOINT -->
+        <joint type='revolute' name='hover_left_wheel_joint'>
+            <child>hover_left_wheel</child>
+            <parent>hover_base</parent>
+            <axis>
+                <xyz>0 -1 0</xyz>
+            </axis>
+        </joint>
+
+        <!-- HOVER RIGHT WHEEL JOINT -->
+        <joint type='revolute' name='hover_right_wheel_joint'>
+            <child>hover_right_wheel</child>
+            <parent>hover_base</parent>
+            <axis>
+                <xyz>0 -1 0</xyz>
+            </axis>
+        </joint>
+
+        <!-- CASTER LEFT BASE JOINT -->
+        <joint type='fixed' name='caster_left_base_joint'>
+            <child>caster_left_base</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <!-- CASTER RIGHT BASE JOINT -->
+        <joint type='fixed' name='caster_right_base_joint'>
+            <child>caster_right_base</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <!-- CASTER LEFT CONNECTOR JOINT -->
+        <joint type='fixed' name='caster_left_connector_joint'>
+            <child>caster_left_connector</child>
+            <parent>caster_left_base</parent>
+        </joint>
+
+        <!-- CASTER RIGHT CONNECTOR JOINT -->
+        <joint type='fixed' name='caster_right_connector_joint'>
+            <child>caster_right_connector</child>
+            <parent>caster_right_base</parent>
+        </joint>
+
+        <!-- CASTER LEFT WHEEL JOINT -->
+        <joint type='fixed' name='caster_left_wheel_joint'>
+            <child>caster_left_wheel</child>
+            <parent>caster_left_connector</parent>
+        </joint>
+
+        <!-- CASTER RIGHT WHEEL JOINT -->
+        <joint type='fixed' name='caster_right_wheel_joint'>
+            <child>caster_right_wheel</child>
+            <parent>caster_right_connector</parent>
+        </joint>
+
+        <!-- SONAR SENSORS -->
+        <link name='sonar_front'>
+            <pose>-0.4825 0 0.60 0 0 0</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <box>
+                        <size>0.015 0.043 0.02</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>0.015 0.043 0.02</size>
+                    </box>
+                </geometry>
+            </visual>
+
+            <sensor name='sonar_front_sensor' type='sonar'>
+                <pose>0 0 0 0 1.5707 0</pose>
+                <sonar>
+                    <min>0.02</min>
+                    <max>5.00</max>
+                    <radius>1.339</radius>
+                </sonar>
+                <always_on>true</always_on>
+                <visualize>true</visualize>
+                <update_rate>20</update_rate>
+    
+                <plugin filename='libgazebo_ros_sonar.so' name='sonar_front_ros'>
+                    <gaussianNoise>0.005</gaussianNoise>
+                    <bias>0</bias>
+                    <topicName>/robot/sonar/front</topicName>
+                </plugin>
+            </sensor>
+        </link>
+        <joint type='fixed' name='sonar_front_joint'>
+            <child>sonar_front</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <link name='sonar_left'>
+            <pose>-0.45 -0.266 0.60 0 0 1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <box>
+                        <size>0.015 0.043 0.02</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>0.015 0.043 0.02</size>
+                    </box>
+                </geometry>
+            </visual>
+
+            <sensor name='sonar_left_sensor' type='sonar'>
+                <pose>0 0 0 0 1.5707 0</pose>
+                <sonar>
+                    <min>0.02</min>
+                    <max>5.00</max>
+                    <radius>1.339</radius>
+                </sonar>
+                <always_on>true</always_on>
+                <visualize>true</visualize>
+                <update_rate>20</update_rate>
+    
+                <plugin filename='libgazebo_ros_sonar.so' name='sonar_left_ros'>
+                    <gaussianNoise>0.005</gaussianNoise>
+                    <bias>0</bias>
+                    <topicName>/robot/sonar/left</topicName>
+                </plugin>
+            </sensor>
+        </link>
+        <joint type='fixed' name='sonar_left_joint'>
+            <child>sonar_left</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <link name='sonar_right'>
+            <pose>-0.45 0.266 0.60 0 0 -1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <box>
+                        <size>0.015 0.043 0.02</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>0.015 0.043 0.02</size>
+                    </box>
+                </geometry>
+            </visual>
+
+            <sensor name='sonar_right_sensor' type='sonar'>
+                <pose>0 0 0 0 1.5707 0</pose>
+                <sonar>
+                    <min>0.02</min>
+                    <max>5.00</max>
+                    <radius>1.339</radius>
+                </sonar>
+                <always_on>true</always_on>
+                <visualize>true</visualize>
+                <update_rate>20</update_rate>
+    
+                <plugin filename='libgazebo_ros_sonar.so' name='sonar_right_ros'>
+                    <gaussianNoise>0.005</gaussianNoise>
+                    <bias>0</bias>
+                    <topicName>/robot/sonar/right</topicName>
+                </plugin>
+            </sensor>
+        </link>
+        <joint type='fixed' name='sonar_rightt_joint'>
+            <child>sonar_right</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <!-- CAMERA SENSOR -->
+        <link name='camera'>
+            <pose>-0.4515 0 0.559 0 0 0</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <box>
+                        <size>0.071 0.094 0.022</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>0.071 0.094 0.022</size>
+                    </box>
+                </geometry>
+            </visual>
+
+            <sensor name='camera_sensor' type='camera'>
+                <pose>0 0 0 0 0 3.1415</pose>
+                <camera name='head'>
+                    <image>
+                        <width>1280</width>
+                        <height>720</height>
+                        <format>R8G8B8</format>
+                    </image>
+                </camera>
+                <visualize>true</visualize>
+                <update_rate>30</update_rate>
+
+                <plugin filename='libgazebo_ros_camera.so' name='camera_ros'>
+                    <alwaysOn>true</alwaysOn>
+                    <updateRate>30</updateRate>
+                    
+                    <cameraName>/robot/camera</cameraName>
+                    <imageTopicName>image_raw</imageTopicName>
+                    <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+                    <frameName>camera_link</frameName>
+
+                    <hackBaseline>0.07</hackBaseline>
+                    <distortionK1>0.0</distortionK1>
+                    <distortionK2>0.0</distortionK2>
+                    <distortionK3>0.0</distortionK3>
+                    <distortionT1>0.0</distortionT1>
+                    <distortionT2>0.0</distortionT2>
+                </plugin>
+            </sensor>
+        </link>
+        <joint type='fixed' name='camera_joint'>
+            <child>camera</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <!-- IMU SENSOR -->
+        <link name='imu'>
+            <pose>-0.00842 0.015 0.125 0 0 0</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <box>
+                        <size>0.01684 0.03111 0.01</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <box>
+                        <size>0.01684 0.03111 0.01</size>
+                    </box>
+                </geometry>
+            </visual>
+
+            <sensor name='imu_sensor' type='imu'>
+                <imu>
+                    <angular_velocity>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.0002</stddev>
+                                <bias_mean>7.5e-06</bias_mean>
+                                <bias_stddev>8e-07</bias_stddev>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.0002</stddev>
+                                <bias_mean>7.5e-06</bias_mean>
+                                <bias_stddev>8e-07</bias_stddev>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.0002</stddev>
+                                <bias_mean>7.5e-06</bias_mean>
+                                <bias_stddev>8e-07</bias_stddev>
+                            </noise>
+                        </z>
+                    </angular_velocity>
+
+                    <linear_acceleration>
+                        <x>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.017</stddev>
+                                <bias_mean>0.1</bias_mean>
+                                <bias_stddev>0.001</bias_stddev>
+                            </noise>
+                        </x>
+                        <y>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.017</stddev>
+                                <bias_mean>0.1</bias_mean>
+                                <bias_stddev>0.001</bias_stddev>
+                            </noise>
+                        </y>
+                        <z>
+                            <noise type="gaussian">
+                                <mean>0</mean>
+                                <stddev>0.017</stddev>
+                                <bias_mean>0.1</bias_mean>
+                                <bias_stddev>0.001</bias_stddev>
+                            </noise>
+                        </z>
+                    </linear_acceleration>
+                </imu>
+                <always_on>true</always_on>
+                <update_rate>100</update_rate>
+
+                <plugin filename='libgazebo_ros_imu_sensor.so' name='imu_ros'>
+                    <robotNamespace>robot</robotNamespace>
+                    <topicName>imu</topicName>
+                    <frameName>hover_base</frameName>
+                    <updateRateHZ>10</updateRateHZ>
+                    <gaussianNoise>0</gaussianNoise>
+                </plugin>
+            </sensor>
+        </link>
+        <joint type='fixed' name='imu_joint'>
+            <child>imu</child>
+            <parent>hover_base</parent>
+        </joint>
+    </model>
+</sdf>

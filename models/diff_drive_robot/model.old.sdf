@@ -1,0 +1,429 @@
+<?xml version='1.0'?>
+<sdf version='1.4'>
+
+    <!-- CASTER WHEEL COLLISION: SPHERE -->
+    <!-- ALL CASTER JOINTS ARE FIXED -->
+
+    <model name="diff_drive_robot">
+        <static>false</static>
+
+        <!-- HOVER BASE -->
+        <link name='hover_base'>
+            <pose>0 0 0.095 0 0 0</pose>
+
+            <collision name='collision'>
+                <pose>0.3 0 0.085 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.6 0.6 0.17</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/hover_base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <!-- PMMA MATERIAL PART -->
+            <inertial>
+                <pose>0.294210 -0.000007 0.075021 0 0 0</pose>
+                <inertia>
+                    <ixx>124866e-06</ixx>
+                    <ixz>2486.9e-06</ixz>
+                    <iyy>120347e-06</iyy>
+                    <iyz>0.0237e-06</iyz>
+                    <izz>216693e-06</izz>
+                </inertia>
+                <mass>3.714</mass>
+            </inertial>
+        </link>
+
+        <link name='hover_base_auxiliary'>
+            <pose>0 0 0.095 0 0 0</pose>
+            <!-- ALUMINIUM MATERIAL PART -->
+            <inertial>
+                <pose>0.362124 -0.000007 0.005637 0 0 0</pose>
+                <inertia>
+                    <ixx>118507e-06</ixx>
+                    <ixy>0.2419e-06</ixy>
+                    <ixz>5624.0e-06</ixz>
+                    <iyy>57298.e-06</iyy>
+                    <izz>154073e-06</izz>
+                </inertia>
+                <mass>5.272</mass>
+            </inertial>
+        </link>
+
+        <!-- HOVER LEFT WHEEL -->
+        <link name='hover_left_wheel'>
+            <pose>0.38 0.2385 0.08 0 1.5707 1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.08</radius>
+                        <length>0.045</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0.6</mu>
+                            <mu2>0.6</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='visual'>
+                <pose>0 0 0 1.5707 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/hover_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.003007</ixx>
+                    <iyy>0.003007</iyy>
+                    <izz>0.005440</izz>
+                </inertia>
+                <mass>1.7</mass>
+            </inertial>
+        </link>
+
+        <!-- HOVER RIGHT WHEEL -->
+        <link name='hover_right_wheel'>
+            <pose>0.38 -0.2385 0.08 0 1.5707 1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <cylinder>
+                        <radius>0.08</radius>
+                        <length>0.045</length>
+                    </cylinder>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0.6</mu>
+                            <mu2>0.6</mu2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='visual'>
+                <pose>0 0 0 -1.5707 0 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/hover_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.003007</ixx>
+                    <iyy>0.003007</iyy>
+                    <izz>0.005440</izz>
+                </inertia>
+                <mass>1.7</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER LEFT BASE -->
+        <link name='caster_left_base'>
+            <pose>0 0.185 0.167 0 0 0</pose>
+
+            <collision name='collision'>
+                <pose>0 0 -0.0085 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.106 0.09 0.017</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>-0.000272 -0.000090 -0.005057 0 0 0</pose>
+                <inertia>
+                    <ixx>65.864e-06</ixx>
+                    <iyy>89.566e-06</iyy>
+                    <izz>153.36e-06</izz>
+                </inertia>
+                <mass>0.1</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER RIGHT BASE -->
+        <link name='caster_right_base'>
+            <pose>0 -0.185 0.167 0 0 0</pose>
+
+            <collision name='collision'>
+                <pose>0 0 -0.0085 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.106 0.09 0.017</size>
+                    </box>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_base.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>-0.000272 -0.000090 -0.005057 0 0 0</pose>
+                <inertia>
+                    <ixx>65.864e-06</ixx>
+                    <iyy>89.566e-06</iyy>
+                    <izz>153.36e-06</izz>
+                </inertia>
+                <mass>0.1</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER LEFT CONNECTOR -->
+        <link name='caster_left_connector'>
+            <pose>0 0.185 0.15 0 0 3.1415</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>0.008557 -0.000014 -0.034485 0 0 0</pose>
+                <inertia>
+                    <ixx>718.007e-06</ixx>
+                    <ixy>0.39114e-06</ixy>
+                    <ixz>140.767e-06</ixz>
+                    <iyy>585.149e-06</iyy>
+                    <iyz>0.52152e-06</iyz>
+                    <izz>525.608e-06</izz>
+                </inertia>
+                <mass>0.4</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER RIGHT CONNECTOR -->
+        <link name='caster_right_connector'>
+            <pose>0 -0.185 0.15 0 0 3.1415</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name='visual'>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_connector.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <pose>0.008557 -0.000014 -0.034485 0 0 0</pose>
+                <inertia>
+                    <ixx>718.007e-06</ixx>
+                    <ixy>0.39114e-06</ixy>
+                    <ixz>140.767e-06</ixz>
+                    <iyy>585.149e-06</iyy>
+                    <iyz>0.52152e-06</iyz>
+                    <izz>525.608e-06</izz>
+                </inertia>
+                <mass>0.4</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER LEFT WHEEL -->
+        <link name='caster_left_wheel'>
+            <pose>-0.04 0.185 0.06 0 1.5707 1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <!-- <cylinder>
+                        <radius>0.06</radius>
+                        <length>0.05</length>
+                    </cylinder> -->
+                    <sphere>
+                        <radius>0.06</radius>
+                    </sphere>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0</mu>
+                            <mu2>0</mu2>
+                            <slip1>1</slip1>
+                            <slip2>1</slip2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='visual'>
+                <pose>0 0 0 0 1.5707 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.000554</ixx>
+                    <iyy>0.000554</iyy>
+                    <izz>0.000900</izz>
+                </inertia>
+                <mass>0.5</mass>
+            </inertial>
+        </link>
+
+        <!-- CASTER RIGHT WHEEL -->
+        <link name='caster_right_wheel'>
+            <pose>-0.04 -0.185 0.06 0 1.5707 1.5707</pose>
+
+            <collision name='collision'>
+                <geometry>
+                    <!-- <cylinder>
+                        <radius>0.06</radius>
+                        <length>0.05</length>
+                    </cylinder> -->
+                    <sphere>
+                        <radius>0.06</radius>
+                    </sphere>
+                </geometry>
+                <surface>
+                    <friction>
+                        <ode>
+                            <mu>0</mu>
+                            <mu2>0</mu2>
+                            <slip1>1</slip1>
+                            <slip2>1</slip2>
+                        </ode>
+                    </friction>
+                </surface>
+            </collision>
+
+            <visual name='visual'>
+                <pose>0 0 0 0 1.5707 0</pose>
+                <geometry>
+                    <mesh>
+                        <uri>model://diff_drive_robot/meshes/caster_wheel.dae</uri>
+                    </mesh>
+                </geometry>
+            </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.000554</ixx>
+                    <iyy>0.000554</iyy>
+                    <izz>0.000900</izz>
+                </inertia>
+                <mass>0.5</mass>
+            </inertial>
+        </link>
+
+        <!-- HOVER LEFT WHEEL JOINT -->
+        <joint type='revolute' name='hover_left_wheel_joint'>
+            <child>hover_left_wheel</child>
+            <parent>hover_base</parent>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <!-- HOVER RIGHT WHEEL JOINT -->
+        <joint type='revolute' name='hover_right_wheel_joint'>
+            <child>hover_right_wheel</child>
+            <parent>hover_base</parent>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <!-- CASTER LEFT BASE JOINT -->
+        <joint type='fixed' name='caster_left_base_joint'>
+            <child>caster_left_base</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <!-- CASTER RIGHT BASE JOINT -->
+        <joint type='fixed' name='caster_right_base_joint'>
+            <child>caster_right_base</child>
+            <parent>hover_base</parent>
+        </joint>
+
+        <!-- CASTER LEFT CONNECTOR JOINT -->
+        <joint type='fixed' name='caster_left_connector_joint'>
+            <child>caster_left_connector</child>
+            <parent>caster_left_base</parent>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+
+        <!-- CASTER RIGHT CONNECTOR JOINT -->
+        <joint type='fixed' name='caster_right_connector_joint'>
+            <child>caster_right_connector</child>
+            <parent>caster_right_base</parent>
+            <axis>
+                <xyz>0 0 1</xyz>
+            </axis>
+        </joint>
+
+        <!-- CASTER LEFT WHEEL JOINT -->
+        <joint type='fixed' name='caster_left_wheel_joint'>
+            <child>caster_left_wheel</child>
+            <parent>caster_left_connector</parent>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+
+        <!-- CASTER RIGHT WHEEL JOINT -->
+        <joint type='fixed' name='caster_right_wheel_joint'>
+            <child>caster_right_wheel</child>
+            <parent>caster_right_connector</parent>
+            <axis>
+                <xyz>0 1 0</xyz>
+            </axis>
+        </joint>
+    </model>
+</sdf>

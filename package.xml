@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>diff_drive</name>
+  <version>0.0.0</version>
+  <description>The diff_drive package</description>
+
+  <maintainer email="wahyu.guntara@gmail.com">WahyuGuntara</maintainer>
+  <license>BSD</license>
+  <url type="website">https://github.com/gunnxx/</url>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>sensor_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>gazebo_ros</build_depend>
+
+  <build_export_depend>sensor_msgs</build_export_depend>
+  <build_export_depend>roscpp</build_export_depend>
+  <build_export_depend>gazebo_ros</build_export_depend>
+
+  <exec_depend>sensor_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>gazebo_ros</exec_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <gazebo_ros plugin_path="${prefix}/../../lib"/>
+    <gazebo_ros gazebo_model_path="${prefix}/models/"/>
+    <gazebo_ros gazebo_media_path="${prefix}"/>
+  </export>
+</package>
