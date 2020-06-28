@@ -29,14 +29,13 @@
             </visual>
 
             <inertial>
+                <pose>-0.2435 0 0.245 0 0 0</pose>
                 <inertia>
-                    <ixx>124866e-06</ixx>
-                    <ixz>2486.9e-06</ixz>
-                    <iyy>120347e-06</iyy>
-                    <iyz>0.0237e-06</iyz>
-                    <izz>216693e-06</izz>
+                    <ixx>1.42769</ixx>
+                    <iyy>1.42792</iyy>
+                    <izz>1.42792</izz>
                 </inertia>
-                <mass>3.714</mass>
+                <mass>15</mass>
             </inertial>
         </link>
 
@@ -205,14 +204,12 @@
             </visual>
 
             <inertial>
-                <pose>0.008557 -0.000014 -0.034485 0 0 0</pose>
+                <pose>0.0228297 0.000000 -0.0262890 0 0 0</pose>
                 <inertia>
-                    <ixx>718.007e-06</ixx>
-                    <ixy>0.39114e-06</ixy>
-                    <ixz>140.767e-06</ixz>
-                    <iyy>585.149e-06</iyy>
-                    <iyz>0.52152e-06</iyz>
-                    <izz>525.608e-06</izz>
+                    <ixx>0.03368e-02</ixx>
+                    <ixz>0.00773e-02</ixz>
+                    <iyy>0.03069e-02</iyy>
+                    <izz>0.02370e-02</izz>
                 </inertia>
                 <mass>0.4</mass>
             </inertial>
@@ -239,14 +236,12 @@
             </visual>
 
             <inertial>
-                <pose>0.008557 -0.000014 -0.034485 0 0 0</pose>
+                <pose>0.0228297 0.000000 -0.0262890 0 0 0</pose>
                 <inertia>
-                    <ixx>718.007e-06</ixx>
-                    <ixy>0.39114e-06</ixy>
-                    <ixz>140.767e-06</ixz>
-                    <iyy>585.149e-06</iyy>
-                    <iyz>0.52152e-06</iyz>
-                    <izz>525.608e-06</izz>
+                    <ixx>0.03368e-02</ixx>
+                    <ixz>0.00773e-02</ixz>
+                    <iyy>0.03069e-02</iyy>
+                    <izz>0.02370e-02</izz>
                 </inertia>
                 <mass>0.4</mass>
             </inertial>
@@ -284,9 +279,9 @@
 
             <inertial>
                 <inertia>
-                    <ixx>0.000554</ixx>
-                    <iyy>0.000554</iyy>
-                    <izz>0.000900</izz>
+                    <ixx>0.000218</ixx>
+                    <iyy>0.000351</iyy>
+                    <izz>0.000218</izz>
                 </inertia>
                 <mass>0.5</mass>
             </inertial>
@@ -324,9 +319,9 @@
 
             <inertial>
                 <inertia>
-                    <ixx>0.000554</ixx>
-                    <iyy>0.000554</iyy>
-                    <izz>0.000900</izz>
+                    <ixx>0.000218</ixx>
+                    <iyy>0.000351</iyy>
+                    <izz>0.000218</izz>
                 </inertia>
                 <mass>0.5</mass>
             </inertial>
@@ -406,6 +401,15 @@
                 </geometry>
             </visual>
 
+            <inertial>
+                <inertia>
+                    <ixx>0.000056</ixx>
+                    <iyy>0.000016</iyy>
+                    <izz>0.000052</izz>
+                </inertia>
+                <mass>0.075</mass>
+            </inertial>
+
             <sensor name='sonar_front_sensor' type='sonar'>
                 <pose>0 0 0 0 1.5707 0</pose>
                 <sonar>
@@ -447,6 +451,15 @@
                     </box>
                 </geometry>
             </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.000056</ixx>
+                    <iyy>0.000016</iyy>
+                    <izz>0.000052</izz>
+                </inertia>
+                <mass>0.075</mass>
+            </inertial>
 
             <sensor name='sonar_left_sensor' type='sonar'>
                 <pose>0 0 0 0 1.5707 0</pose>
@@ -490,6 +503,15 @@
                 </geometry>
             </visual>
 
+            <inertial>
+                <inertia>
+                    <ixx>0.000056</ixx>
+                    <iyy>0.000016</iyy>
+                    <izz>0.000052</izz>
+                </inertia>
+                <mass>0.075</mass>
+            </inertial>
+
             <sensor name='sonar_right_sensor' type='sonar'>
                 <pose>0 0 0 0 1.5707 0</pose>
                 <sonar>
@@ -532,6 +554,15 @@
                     </box>
                 </geometry>
             </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.000466</ixx>
+                    <iyy>0.000276</iyy>
+                    <izz>0.000693</izz>
+                </inertia>
+                <mass>0.5</mass>
+            </inertial>
 
             <sensor name='camera_sensor' type='camera'>
                 <pose>0 0 0 0 0 3.1415</pose>
@@ -587,6 +618,15 @@
                     </box>
                 </geometry>
             </visual>
+
+            <inertial>
+                <inertia>
+                    <ixx>0.000056</ixx>
+                    <iyy>0.000016</iyy>
+                    <izz>0.000052</izz>
+                </inertia>
+                <mass>0.075</mass>
+            </inertial>
 
             <sensor name='imu_sensor' type='imu'>
                 <imu>
